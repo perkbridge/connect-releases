@@ -3,6 +3,25 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.2-beta] - 2026-10-29
+
+### Added
+
+- Settings shows the organization's licence (limits and expiry).
+
+### Fixed
+
+- The administrator created by `nile-install` lacked notification, audit,
+  failover and trading administration rights on the organization.
+- A finished MetaTrader 5 image download could be reported as failed until
+  the server's next report; it is now shown as present at once. New servers
+  allow 2 hours for an image download.
+
+### Changed
+
+- Release sequence 4. `nile-install upgrade` installs it over 1.0.1-beta
+  (3), 1.0.0-beta (2) and installations from before release sequences.
+
 ## [1.0.1-beta] - 2026-10-29
 
 Replaces 1.0.0-beta.
@@ -66,4 +85,5 @@ First public beta.
 - Desktop installers aren't notarized by Apple or code-signed by Microsoft.
 - No self-service licence portal yet.
 
+[1.0.2-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.2-beta
 [1.0.1-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.1-beta
