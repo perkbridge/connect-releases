@@ -3,7 +3,23 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [1.0.0-beta] - 2026-10-29
+## [1.0.1-beta] - 2026-10-29
+
+Replaces 1.0.0-beta.
+
+### Fixed
+
+- Adding a server from the dashboard was refused with "the release manifest
+  lists no runtime image, so no host policy can be generated": the 1.0.0-beta
+  release manifest named no MetaTrader 5 runtime image. 1.0.1-beta names
+  `ghcr.io/perkbridge/nile-mt5-runtime` main-6091472 (Wine 11.20) by digest.
+
+### Changed
+
+- Release sequence 3. `nile-install upgrade` installs it over 1.0.0-beta
+  (sequence 2) and over installations from before release sequences.
+
+## 1.0.0-beta - 2026-10-29 (withdrawn)
 
 First public beta.
 
@@ -50,4 +66,4 @@ First public beta.
 - Desktop installers aren't notarized by Apple or code-signed by Microsoft.
 - No self-service licence portal yet.
 
-[1.0.0-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.0-beta
+[1.0.1-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.1-beta
