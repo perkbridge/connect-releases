@@ -3,6 +3,28 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.3-beta] - 2026-10-30
+
+### Added
+
+- Edit SL/TP on an open position (dashboard and API). During a halt, or with
+  trading or the route off, only a missing stop can be added. A lost answer
+  ends as "answer lost" with the prior levels kept for review.
+- Start a stopped or failed deployment as a new session on the same server;
+  Create again after removal.
+- Revert a runtime image update to the previous image.
+- MT5 runtime `nile-mt5-runtime` main-be088e5 (Wine 11.20) with Edit SL/TP.
+
+### Changed
+
+- Remembered credentials are on by default for new servers; the
+  installation's administrator can trade on their own accounts without
+  single sign-on; risk mode can be chosen when a deployment is created.
+- Release sequence 5. `nile-install upgrade` installs it over 1.0.2-beta (4),
+  1.0.1-beta (3), 1.0.0-beta (2) and installations from before release
+  sequences. It changes the database, so going back means restoring the
+  upgrade's backup.
+
 ## [1.0.2-beta] - 2026-10-29
 
 ### Added
@@ -85,5 +107,6 @@ First public beta.
 - Desktop installers aren't notarized by Apple or code-signed by Microsoft.
 - No self-service licence portal yet.
 
+[1.0.3-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.3-beta
 [1.0.2-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.2-beta
 [1.0.1-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.1-beta
