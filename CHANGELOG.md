@@ -3,6 +3,33 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.4-beta] - 2026-10-31
+
+### Fixed
+
+- An economic calendar event with an empty or badly encoded name no longer
+  breaks the whole calendar; the news picker and news rules load again and
+  list such an event by its id.
+- The credential vault starts after a reboot on servers added with earlier
+  betas: the updater repairs narrower state and slot folder permissions at
+  start and never narrows a wider mode.
+- A market close rule covering all symbols reports ready after a restart
+  with nothing open, instead of refusing opening orders.
+
+### Added
+
+- MT5 runtime `nile-mt5-runtime` main-51bd371 (Wine 11.20) with the
+  calendar and market close fixes.
+- Deployed rules tab on the Risk page; failover history shows the latest 5
+  steps with older ones on demand.
+
+### Changed
+
+- Release sequence 6. `nile-install upgrade` installs it over 1.0.3-beta (5),
+  with a binary rollback, and over 1.0.2-beta (4), 1.0.1-beta (3),
+  1.0.0-beta (2) and installations from before release sequences with
+  `--rollback-restore`. No database changes.
+
 ## [1.0.3-beta] - 2026-10-30
 
 ### Added
