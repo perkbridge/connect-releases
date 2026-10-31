@@ -3,6 +3,35 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.5-beta] - 2026-10-31
+
+### Fixed
+
+- Time rules plan again after a terminal restart, reboot or failover switch
+  inside a time block; before, positions and pending orders the rule should
+  close or cancel could stay open until the block ended.
+- Edit SL/TP on MT5 positions checks the broker's order modes instead of
+  refusing with "stops not supported".
+- Host cleanup is no longer refused by earlier finished sessions of a
+  deployment started more than once.
+
+### Added
+
+- Settings › Licence: download the activation request and upload a licence
+  file (the installation's first administrator owns the licence).
+- nile-setup updates an installed management server to a newer release; a
+  failed update returns to the previous release.
+- nile-setup errors link to the troubleshooting page.
+- MT5 runtime `nile-mt5-runtime` main-a3ffb64 (Wine 11.20) with the time
+  rules fix.
+
+### Changed
+
+- Release sequence 7. `nile-install upgrade` installs it over 1.0.4-beta (6)
+  and 1.0.3-beta (5) with a binary rollback, and over 1.0.2-beta (4),
+  1.0.1-beta (3), 1.0.0-beta (2) and installations from before release
+  sequences with `--rollback-restore`. No database changes.
+
 ## [1.0.4-beta] - 2026-10-31
 
 ### Fixed
