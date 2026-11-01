@@ -3,6 +3,49 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.0-beta] - 2026-11-01
+
+### Added
+
+- Orders › Closed trades reads MT5 trade history directly from the running
+  terminal, including trades placed outside PerkBridge Connect. Each trade
+  includes its broker deals and the result after commission, swap and fees;
+  matching platform orders supply the route and strategy. Browse 10 trades
+  at a time with Newer and Older.
+- Accepted DirectConnect architecture (ADR-045) and an experimental benchmark
+  kit in the source repository. The production DirectConnect order path is
+  not implemented or available in this release.
+
+### Changed
+
+- MT5 history is read from the terminal on each request, without storing a
+  copy of the broker's history. Positions and exposure return a
+  terminal-not-running error when the terminal is stopped; the dashboard
+  shows a notice instead of presenting the last reported positions as current.
+- Update trading servers' host components from the dashboard: live history
+  requires the updated Fleet Agent. Update deployment runtime images for
+  the calendar-value fix below.
+- No new database migrations compared with 1.0.5-beta. Rollback to that
+  version does not require a database restore. For older versions, follow
+  the install guide's rollback requirements.
+
+### Fixed
+
+- Malformed or overlong broker event names no longer reject an entire
+  calendar-value response and leave news rules unable to decide. Names are
+  cleaned for display; rules still identify events by ID.
+- Server cleanup recognises newer agent state, including placement records,
+  catalogue caches, risk directories and the trade ledger. Unforwarded risk
+  events and unresolved order outcomes still block cleanup, including
+  unknown outcomes already marked finished locally.
+
+### Known limitations
+
+- MT5 history requires a running terminal with its history loaded. A read
+  can take up to 30 seconds and reports an error when history is temporarily
+  unavailable. Broker position-ID assumptions and netting-reversal handling
+  have not yet been verified against a real terminal.
+
 ## [1.0.5-beta] - 2026-10-31
 
 ### Fixed
@@ -163,6 +206,9 @@ First public beta.
 - Desktop installers aren't notarized by Apple or code-signed by Microsoft.
 - No self-service licence portal yet.
 
+[1.1.0-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.1.0-beta
+[1.0.5-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.5-beta
+[1.0.4-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.4-beta
 [1.0.3-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.3-beta
 [1.0.2-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.2-beta
 [1.0.1-beta]: https://github.com/perkbridge/connect-releases/releases/tag/v1.0.1-beta
