@@ -3,6 +3,37 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.1-beta] - 2026-11-04
+
+### Added
+
+- DirectConnect, opt-in and for demo accounts only: a low-latency order path
+  from a client program through a DirectConnect proxy to the trading server.
+  Deploy proxies from the dashboard (DirectConnect › Proxies), install the
+  host component on trading servers, prepare a deployment for DirectConnect
+  when you create it, and switch the account on its Order path tab. It needs
+  a licence with the `directconnect` feature. It has not yet been run
+  against a real terminal and broker.
+- Trading operator role in PerkBridge Identity, and the installing
+  administrator can grant trading rights.
+- A second runtime image for DirectConnect deployments (File channel).
+
+### Fixed
+
+- Changes to stop loss and take profit on an open MT5 position are now always
+  sent to the terminal.
+- With `--tls internal`, the dashboard opens at `https://<server IP>/`; the
+  handshake no longer fails when no host name is used.
+
+### Changed
+
+- New MetaTrader 5 runtime images `main-fbfc5ae` (standard and DirectConnect).
+  Update each deployment's runtime image from the dashboard.
+- Adds 12 database migrations that only add to the database. Rollback to
+  1.1.0-beta or 1.0.5-beta is a binary switch (`nile-install rollback`) and
+  does not require a database restore. For older versions, follow the
+  install guide's rollback requirements.
+
 ## [1.1.0-beta] - 2026-11-01
 
 ### Added
