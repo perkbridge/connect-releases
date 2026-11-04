@@ -3,6 +3,24 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.2-beta] - 2026-11-04
+
+### Fixed
+
+- The credential vault now starts on the server that runs the Control Plane
+  when that server is also added as a trading server. The installer creates
+  `/var/lib/nile` with mode 0711 (others can pass through it, not list it),
+  and the vault setup widens it on servers installed by an older installer.
+  Everything else under it stays closed.
+
+### Changed
+
+- No new database migrations and no new runtime images compared with
+  1.1.1-beta. Rollback to 1.1.1-beta, 1.1.0-beta or 1.0.5-beta is a binary
+  switch (`nile-install rollback`) and does not require a database restore.
+  After a rollback, an older release sets `/var/lib/nile` back to 0700, which
+  stops the vault again on a server that is both management and trading.
+
 ## [1.1.1-beta] - 2026-11-04
 
 ### Added
