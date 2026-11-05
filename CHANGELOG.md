@@ -3,6 +3,37 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.3-beta] - 2026-11-05
+
+### Added
+
+- PerkBridge Identity: the installing admin can give trading rights, and a
+  built-in Trading operator role.
+- Time Machine (preview, for operators): dataset import, spread tables and a
+  read-only research API with virtual-time runs. Nothing in trading uses it
+  yet.
+
+### Fixed
+
+- Order limits work from a new risk-mode deployment's first minute. The
+  Control Plane sends the account's Connect orders from the last 33 days with
+  the first risk policy, so day, week and month order limits no longer refuse
+  every order with `risk_evaluation_error` until the next period. No history
+  is sent while the earlier orders can't be confirmed complete.
+- The credential vault uses an existing data folder without opening its
+  parent, which fixes `VAULT_NOT_STARTED` where `/var/lib/nile` isn't
+  readable.
+- A notification whose call was answered counts as delivered even if the
+  notifier hangs up right after.
+
+### Changed
+
+- New MetaTrader 5 runtime images `main-a7fca75` (standard and DirectConnect
+  File-channel), now the latest in the runtime catalog.
+- One new database migration, which only adds a table. Rollback to
+  1.1.2-beta, 1.1.1-beta, 1.1.0-beta or 1.0.5-beta is a binary switch
+  (`nile-install rollback`) and does not require a database restore.
+
 ## [1.1.2-beta] - 2026-11-04
 
 ### Fixed
