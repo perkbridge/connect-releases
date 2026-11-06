@@ -18,7 +18,7 @@ All notable changes to PerkBridge Connect. Versions follow
 
 ### Changed
 
-- New MetaTrader 5 runtime images `main-5caaaf1` (standard and DirectConnect
+- New MetaTrader 5 runtime images `main-41c2b76` (standard and DirectConnect
   File-channel). Update each deployment's runtime image from the dashboard.
 - One database migration that only adds a table. Rollback to 1.1.4-beta and
   the earlier 1.1.x and 1.0.5 betas is a binary switch and does not require a
