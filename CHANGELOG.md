@@ -3,6 +3,27 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.5-beta] - 2026-11-06
+
+### Added
+
+- Stored broker server files: after a terminal logs in, the Control Plane
+  keeps and signs the broker server list the terminal wrote, and later
+  starts, restarts and failover standbys on the same broker server load it
+  instead of repeating the broker search. The terminal verifies the
+  signature first and falls back to the search without a valid copy.
+  Settings lists the stored files.
+- Time Machine (preview, for operators): performance work, run admission and
+  checkpoints before eviction.
+
+### Changed
+
+- New MetaTrader 5 runtime images `main-41c2b76` (standard and DirectConnect
+  File-channel). Update each deployment's runtime image from the dashboard.
+- One database migration that only adds a table. Rollback to 1.1.4-beta and
+  the earlier 1.1.x and 1.0.5 betas is a binary switch and does not require a
+  database restore.
+
 ## [1.1.4-beta] - 2026-11-06
 
 ### Changed
