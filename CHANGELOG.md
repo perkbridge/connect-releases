@@ -3,6 +3,34 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.4-beta] - 2026-11-06
+
+### Changed
+
+- New accounts get a default quote age limit of 10 seconds, and the limit
+  applies only to market orders; pending orders are no longer refused for an
+  old quote. Existing accounts keep their saved value.
+- New MetaTrader 5 runtime images `main-4954508` (standard and DirectConnect
+  File-channel), with the risk changes below and an updated certificate
+  package. Update each deployment's runtime image from the dashboard.
+- Two database migrations that only add a column and change a default.
+  Rollback to 1.1.3-beta, 1.1.2-beta, 1.1.1-beta, 1.1.0-beta or 1.0.5-beta is
+  a binary switch and does not require a database restore.
+
+### Fixed
+
+- A just-filled order counts toward the open-position and net-volume limits
+  until a positions report taken after the fill shows it, so a second order
+  in that gap can no longer pass the limit.
+- Changing a pending order right after placing it is no longer refused with
+  "being settled".
+
+### Added
+
+- Time Machine (preview, for operators): accounting, netting, stop-out, swap,
+  commission and risk rules in virtual time, run reports and a container
+  image. Nothing in live trading uses it.
+
 ## [1.1.3-beta] - 2026-11-05
 
 ### Added
