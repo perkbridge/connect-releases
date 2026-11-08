@@ -3,6 +3,24 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.8-beta] - 2026-11-08
+
+### Fixed
+
+- The Fleet Agent accepts the DirectConnect commands (`trade.direct.config`,
+  `trade.direct.submit`, `trade.direct.import`) instead of refusing them as
+  unknown, so DirectConnect deployments get their configuration, orders and
+  ledger imports.
+- DirectConnect state folders keep their owners after an agent restart:
+  roots are root:root 0711, `sock/` and `ledger/` root:nile-direct 0710, and
+  the agent repairs root-owned entries at start (resumable).
+
+### Changed
+
+- No database migrations and no new runtime images (they stay
+  `main-73f6535`). Rollback to 1.1.7-beta and the earlier 1.1.x and 1.0.5
+  betas is a binary switch and does not require a database restore.
+
 ## [1.1.7-beta] - 2026-11-08
 
 ### Fixed
