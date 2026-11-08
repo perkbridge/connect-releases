@@ -3,6 +3,23 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.7-beta] - 2026-11-08
+
+### Fixed
+
+- DirectConnect deployments can be created again: the deployment's socket
+  directory is now 0710 without setgid (the hardened agent service may not
+  set setgid, which failed with `direct_dir_unavailable`), and the risk
+  socket is 0666. Access is still limited by the directory and the peer user
+  check. A half-created directory is removed so a retry works.
+
+### Changed
+
+- New MetaTrader 5 runtime images `main-73f6535` (standard and DirectConnect
+  File-channel). Update each deployment's runtime image from the dashboard.
+- No database migrations. Rollback to 1.1.6-beta and the earlier 1.1.x and
+  1.0.5 betas is a binary switch and does not require a database restore.
+
 ## [1.1.6-beta] - 2026-11-08
 
 ### Fixed
