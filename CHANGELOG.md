@@ -3,6 +3,25 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.9-beta] - 2026-11-08
+
+### Fixed
+
+- DirectConnect: the risk service starts at the deployment's active
+  placement and epoch, and the Control Plane binds the risk policy to it,
+  so DirectConnect accounts can bind (before, every read answered
+  `server_unavailable`). Existing DirectConnect deployments must be
+  re-created once.
+- A DirectConnect risk policy saved while the placement is not active is
+  held and sent with its binding once the placement is active, instead of
+  being refused for good.
+
+### Changed
+
+- No database migrations and no new runtime images (they stay
+  `main-73f6535`). Rollback to 1.1.8-beta and the earlier 1.1.x and 1.0.5
+  betas is a binary switch and does not require a database restore.
+
 ## [1.1.8-beta] - 2026-11-08
 
 ### Fixed
