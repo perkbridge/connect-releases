@@ -3,6 +3,29 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.6-beta] - 2026-11-08
+
+### Fixed
+
+- The Fleet Agent accepts the DirectConnect runtime image
+  (`nile-mt5-runtime-direct`) from the signed catalog instead of refusing it.
+- Installing or removing DirectConnect components on a server no longer
+  fails with `update_artifact_unavailable`.
+- The light or dark choice is kept across page reloads in the dashboard,
+  Identity and the setup page.
+
+### Changed
+
+- The DirectConnect menu section and the create form's DirectConnect option
+  are shown only when the licence includes DirectConnect, and are refreshed
+  after a licence upload.
+- The create form checks resource limits as they are typed; the Start
+  journey's broker login step offers the server credential vault; platform
+  cards not yet on the server have their own Download.
+- No database migrations and no new runtime images (they stay `main-41c2b76`).
+  Rollback to 1.1.5-beta and the earlier 1.1.x and 1.0.5 betas is a binary
+  switch and does not require a database restore.
+
 ## [1.1.5-beta] - 2026-11-06
 
 ### Added
