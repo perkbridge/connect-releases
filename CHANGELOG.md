@@ -3,6 +3,27 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.10-beta] - 2026-11-09
+
+### Added
+
+- The account's automatic stop after refused orders can be switched off in
+  the Risk tab (on by default); the saved count is kept.
+
+### Changed
+
+- Risk tab: *Deployed rules* lists every rule with its status on the server;
+  an ended block is no longer shown as blocking. *Limits* is renamed
+  *Account limits*; the separate Guards section is removed.
+- One database migration that only adds a column with a default. Rollback to
+  1.1.9-beta and the earlier 1.1.x and 1.0.5 betas is a binary switch and
+  does not require a database restore. Runtime images stay `main-73f6535`.
+
+### Fixed
+
+- DirectConnect: a bars read without an end time reads up to now instead of
+  failing; the reason for a failed read is logged on the server.
+
 ## [1.1.9-beta] - 2026-11-08
 
 ### Fixed
