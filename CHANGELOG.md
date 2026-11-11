@@ -3,6 +3,32 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.0-beta] - 2026-11-11
+
+### Added
+
+- Python strategies: run a strategy zip or `strategy.yaml` as a container on
+  a managed server, with per-account tokens, typed parameters and sealed
+  secrets, versions, and Logs, Orders and Metrics tabs. Needs the licence
+  feature `strategies` and the per-server switch under *Strategies › Servers*.
+- Events for strategies (schedule, trading, webhook, manual), schedule
+  offsets, and webhooks without authentication.
+- Position protections: trailing stop, break-even, stop and take-profit
+  ladders, time exit, executed on the trading server.
+- Stop loss and take profit on MT5 market orders.
+- Resource tags (up to 5 per resource), tag filters, top-bar scope control,
+  *Settings › Tags*.
+- *Run setup again* for a server that is already set up.
+
+### Changed
+
+- The web front end answers 404 for hidden-file paths and sends a
+  Permissions-Policy header.
+- MetaTrader 5 runtime images move to `RUNTIME_TAG`.
+- Four database migrations that only add tables, columns and indexes.
+  Rollback to 1.1.10-beta and the earlier 1.1.x and 1.0.5 betas is a binary
+  switch and does not require a database restore.
+
 ## [1.1.10-beta] - 2026-11-09
 
 ### Added
