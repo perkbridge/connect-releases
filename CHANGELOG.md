@@ -24,7 +24,7 @@ All notable changes to PerkBridge Connect. Versions follow
 
 - The web front end answers 404 for hidden-file paths and sends a
   Permissions-Policy header.
-- MetaTrader 5 runtime images move to `RUNTIME_TAG`.
+- MetaTrader 5 runtime images move to `main-213a8d4`.
 - Four database migrations that only add tables, columns and indexes.
   Rollback to 1.1.10-beta and the earlier 1.1.x and 1.0.5 betas is a binary
   switch and does not require a database restore.
