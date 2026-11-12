@@ -3,6 +3,32 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.1-beta] - 2026-11-12
+
+### Added
+
+- The default licence in the bundle allows up to 2 Python strategies; its
+  other limits are unchanged.
+- Stages and account responsibility (ADR-055): `stage` and `account` tag
+  keys; linked resources must share a stage.
+- Routes: symbol chips; strategy accounts can trade through a route.
+- Dashboard: server Installation tab, Run setup again under Updates, search
+  and paging for accounts and routes, compact strategy parameters table.
+- nile-setup can create the server on Scaleway (ADR-056).
+
+### Changed
+
+- Demo-only checks withdrawn: deployments may trade demo or live accounts.
+- MetaTrader 5 runtime images move to `main-bb07f81` (NileTrade 1.4.0).
+- Go 1.26.11 and updated libraries and images (PostgreSQL, Caddy, Keycloak).
+- One database migration that only adds tag definitions and a trigger.
+  Rollback to 1.2.0-beta and the earlier 1.1.x and 1.0.5 betas is a binary
+  switch and does not require a database restore.
+
+### Fixed
+
+- Returns of a confirmed stop no longer get stuck.
+
 ## [1.2.0-beta] - 2026-11-11
 
 ### Added
