@@ -3,6 +3,15 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.2-beta] - 2026-11-13
+
+### Changed
+
+- Go 1.27.4 for all components; Caddy 2.11.9 in the web server image.
+- Updated dependencies for the dashboard, identity and setup web apps.
+- No database migration. Rollback to 1.2.1-beta and the earlier 1.2.x, 1.1.x
+  and 1.0.5 betas is a binary switch and does not require a database restore.
+
 ## [1.2.1-beta] - 2026-11-12
 
 ### Added
