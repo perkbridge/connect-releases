@@ -9,8 +9,6 @@ All notable changes to PerkBridge Connect. Versions follow
 
 - Go 1.27.4 for all components; Caddy 2.11.9 in the web server image.
 - Updated dependencies for the dashboard, identity and setup web apps.
-- Sign-in page wording: "Your trading environment", fewer MetaTrader 5
-  mentions.
 - No database migration. Rollback to 1.2.1-beta and the earlier 1.2.x, 1.1.x
   and 1.0.5 betas is a binary switch and does not require a database restore.
 
