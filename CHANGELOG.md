@@ -3,7 +3,7 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [1.2.4-beta] - 2026-11-15
+## [1.2.5-beta] - 2026-11-15
 
 ### Added
 
