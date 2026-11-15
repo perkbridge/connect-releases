@@ -19,6 +19,7 @@ All notable changes to PerkBridge Connect. Versions follow
 - Organization-wide emergency stop; terminal restart with reconciliation.
 - Change your own password; organization data export and deletion.
 - Control Plane standby (first release, not yet qualified on real servers).
+- Dashboard: one button layout everywhere and one clear choice for where the terminal login is kept.
 
 ### Changed
 
