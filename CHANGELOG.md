@@ -3,6 +3,12 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.6-beta] - 2026-11-15
+
+### Fixed
+
+- Fresh installation fix: the Control Plane now starts before migration 0113 exists (#764).
+
 ## [1.2.5-beta] - 2026-11-15
 
 ### Added
