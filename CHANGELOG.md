@@ -3,6 +3,22 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.8-beta] - 2026-11-15
+
+### Added
+
+- Strategy trading mode (`live` or `dry`); a `dry` strategy cannot open exposure. Existing strategies stay `live`.
+- Operator clearing (C4) of one leftover authorization whose sender is provably gone (`control-plane admin trading obligation clear`).
+
+### Fixed
+
+- An order whose submission was never reported settles as not found after its deadline instead of blocking reconciliation.
+- No warnings for a reused broker install volume or for a start before the schema migration finishes.
+
+### Changed
+
+- Published without the full release quality gate, at the product owner's request. Default runtime unchanged: `main-e66c718` (NileTrade 1.6.0).
+
 ## [1.2.7-beta] - 2026-11-15
 
 ### Added
