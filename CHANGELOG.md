@@ -3,6 +3,19 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.7-beta] - 2026-11-15
+
+### Added
+
+- Pip size per instrument (override per account in the Symbols table, or a default rule); "1 pip = X" on the order form. Pip conversion with it needs NileTrade 1.6.0 on risk-mode deployments.
+
+### Fixed
+
+- Risk mode refuses stops inside the spread or the stops level before sending (`stops_invalid`); closes are never blocked.
+- Rules assigned to a route now apply to orders placed through that route.
+- Failover settings refuse a standby server without risk mode for a risk-mode deployment.
+- Creating a DirectConnect account without the licence feature answers 409 `feature_not_licensed` instead of 500.
+
 ## [1.2.6-beta] - 2026-11-15
 
 ### Fixed
