@@ -3,6 +3,35 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.3-beta] - 2026-11-15
+
+### Added
+
+- Closed trades show their close reason (needs the new agent and NileTrade 1.5.0).
+- Install doctor (`nile-install doctor`), a Health card with Fix buttons, and an operator runbook.
+- Scheduled encrypted off-site backups with alerts, a Backups card that lists
+  the kept backups, PostgreSQL point-in-time recovery and telemetry, and
+  retention for tables that grow without limit.
+- Platform observability, host log rotation and on-demand host logs
+  (Administration > Platform logs).
+- Host hardening (clock check, host firewall), container hardening, secrets
+  rotation, and safe rotation of the DirectConnect certificate authority.
+- Organization-wide emergency stop; terminal restart with reconciliation.
+- Change your own password; organization data export and deletion.
+- Control Plane standby (first release, not yet qualified on real servers).
+- Dashboard: one button layout everywhere and one clear choice for where the terminal login is kept.
+
+### Changed
+
+- Stops in money, % of balance, pips or points reach the risk service again.
+- The agent skips a repeated terminal read for opens and partial closes in
+  risk mode (about 1 s faster per order).
+- MetaTrader 5 runtime images move to `main-253a447` (NileTrade 1.5.0).
+- Go 1.27.4, Caddy 2.11.9 and updated web dependencies.
+- Database migrations only add tables, columns, constraints and triggers;
+  rollback to 1.2.2-beta and the earlier betas is a binary switch and does
+  not require a database restore.
+
 ## [1.2.2-beta] - 2026-11-13
 
 ### Changed
