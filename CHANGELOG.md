@@ -3,7 +3,7 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [1.2.3-beta] - 2026-11-15
+## [1.2.4-beta] - 2026-11-15
 
 ### Added
 
@@ -31,6 +31,10 @@ All notable changes to PerkBridge Connect. Versions follow
 - Database migrations only add tables, columns, constraints and triggers;
   rollback to 1.2.2-beta and the earlier betas is a binary switch and does
   not require a database restore.
+
+### Fixed
+
+- Organization deletion also removes the audit record of the organization's last data export.
 
 ## [1.2.2-beta] - 2026-11-13
 
