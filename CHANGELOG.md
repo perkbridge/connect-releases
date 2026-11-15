@@ -9,6 +9,11 @@ All notable changes to PerkBridge Connect. Versions follow
 
 - Pip size per instrument (override per account in the Symbols table, or a default rule); "1 pip = X" on the order form. Pip conversion with it needs NileTrade 1.6.0 on risk-mode deployments.
 
+### Changed
+
+- MetaTrader 5 runtime images move to `main-e66c718` (NileTrade 1.6.0), the default runtime of this release.
+- Published without the full release quality gate, at the product owner's request (qualification run before a release candidate).
+
 ### Fixed
 
 - Risk mode refuses stops inside the spread or the stops level before sending (`stops_invalid`); closes are never blocked.
