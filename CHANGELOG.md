@@ -3,6 +3,25 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.10-beta] - 2026-11-16
+
+### Added
+
+- `GET /v1/trading/strategy-self`: a running strategy reads its own trading mode, state, name, order label and account.
+- Tick values on each quote (needs NileTrade 1.7.0).
+- With SSO on, a choice between Connect and Identity management after sign-in, and a "PerkBridge apps" launcher in the top bar.
+- `NILE_CP_DB_MAX_CONNS` (4 to 200, default 16) for the Control Plane's database pool; PostgreSQL `max_connections` follows it. New trading-loop and pool-wait metrics.
+
+### Changed
+
+- Lower order latency under load: accepted orders are dispatched between the steps of the trading loop's pass, and order queries use two new indexes (migration 0130).
+- MetaTrader 5 runtime images move to `main-b66c4e7` (NileTrade 1.7.0), the default runtime of this release.
+- Published without the full release quality gate, at the product owner's request; the gate runs on the release candidate.
+
+### Fixed
+
+- A bracket protection whose position closed before it was bound now ends instead of staying active (needs NileTrade 1.7.0).
+
 ## [1.2.8-beta] - 2026-11-15
 
 ### Added
