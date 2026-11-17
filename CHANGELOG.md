@@ -3,6 +3,24 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.11-beta] - 2026-11-17
+
+### Added
+
+- `tick_size` in the symbols read (`null` until the broker reports it).
+- The standby keeper pulls a missing runtime image once where the host policy allows it, and otherwise says which image to pull.
+
+### Changed
+
+- Accepted orders are dispatched by their own dispatcher, off the trading loop's one-second pass.
+- The pip size is edited with a pencil icon; the "Stopping MT5 does not close positions" notice is removed from Overview.
+- Published without the full release quality gate, at the product owner's request. Default runtime unchanged: `main-b66c4e7` (NileTrade 1.7.0).
+
+### Fixed
+
+- A bracket protection recorded before its position is linked to it, so the position's protection lookup no longer answers 404.
+- The standby keeper no longer retries arming in a loop when the standby lacks the runtime image.
+
 ## [1.2.10-beta] - 2026-11-16
 
 ### Added
