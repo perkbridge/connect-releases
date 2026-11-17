@@ -3,6 +3,25 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.3.0-rc.1] - 2026-11-17
+
+First release candidate of 1.3.0. Collects every change since 1.2.2-beta.
+
+### Changed
+
+- Create again sits on the right, like other card actions.
+- Form labels and radio choices in the dashboard are associated with their controls for screen readers.
+- Passed the full release quality gate (163 checks passed, none failed; SonarQube quality gate passed). Default runtime unchanged: `main-b66c4e7` (NileTrade 1.7.0).
+
+### Fixed
+
+- A deployment created from a request no longer stays under "Waiting for a download".
+
+### Security
+
+- CVE-2025-6020 (linux-pam, PostgreSQL image): assessed not reachable and accepted by the product owner.
+- CVE-2026-95692, CVE-2026-88823, CVE-2026-95691, CVE-2026-107496 (OpenSSL 3.0, PostgreSQL image, no Debian fix yet): assessed not reachable; proposed, pending product owner sign-off.
+
 ## [1.2.12-beta] - 2026-11-17
 
 ### Changed
