@@ -3,6 +3,18 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.12-beta] - 2026-11-17
+
+### Changed
+
+- The API tokens notice follows the installation: an Identity link for Identity administrators, "ask an Identity administrator" for other Identity users, and the command without Identity.
+- Restart terminal and Acknowledge buttons on the right, like other card actions.
+- Published without the full release quality gate, at the product owner's request. Default runtime unchanged: `main-b66c4e7` (NileTrade 1.7.0).
+
+### Fixed
+
+- A setup journey whose deployment started from the credential vault now completes once the broker is authorized.
+
 ## [1.2.11-beta] - 2026-11-17
 
 ### Added
