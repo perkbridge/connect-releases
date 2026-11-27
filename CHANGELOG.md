@@ -3,9 +3,9 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [1.4.0-rc.1] - 2026-11-27
+## [1.4.0-rc.2] - 2026-11-27
 
-First release candidate of 1.4.0. Collects every change since 1.3.0-rc.1.
+First published release candidate of 1.4.0 (1.4.0-rc.1 was an internal build and was not published). Collects every change since 1.3.0-rc.1.
 
 ### Added
 
