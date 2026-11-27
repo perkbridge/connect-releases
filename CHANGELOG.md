@@ -3,6 +3,45 @@
 All notable changes to PerkBridge Connect. Versions follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.4.0-rc.2] - 2026-11-27
+
+First published release candidate of 1.4.0 (1.4.0-rc.1 was an internal build and was not published). Collects every change since 1.3.0-rc.1.
+
+### Added
+
+- PerkBridge Chart at `/chart/`: chart with order ticket, Layouts, Watchlist, Orders and Accounts pages.
+- PerkBridge Fleet Cockpit at `/cockpit/`: Incidents, Risk control, Strategies, Brokers, Accounts and Audit.
+- An app menu with Connect, Chart, Fleet Cockpit, and Identity management when Identity is set up.
+- Strategy library (definitions, versions, rollout with preview, promote) and dry run for strategies.
+- Account risk limits in money or percent of the balance: Max risk per position and Max risk per account.
+- A Recovery tab on each deployment, with a badge counting what needs a person.
+- An official economic calendar service, pulled hourly, with its own Administration tab.
+- Forming bar on request in bars reads (runtime image NileTrade 1.9.0).
+- Edit host limits: change a server's deployment limit from the dashboard.
+- An order timeline chart in order details.
+
+### Changed
+
+- After a host or runtime image maintenance, trading resumes on its own once the resume checks pass.
+- The account and route lot limits are retired.
+- DirectConnect: the proxy-restart fence clears on ledger and broker evidence and is bounded by the proxy's last sign of life; a person can accept the account's own unexplained deals.
+- Runtime images: MetaTrader 5 `main-35317cd7` (NileTrade 1.9.0) and Python `3.12-main-35317cd7` (`perkbridge-connect` 1.9.0b1), hardened.
+- Database migrations 0132 to 0162, expand only.
+- Passed the release quality gate (190 checks passed, none failed). SonarQube not run for this release candidate.
+- PerkBridge Identity image: Keycloak 26.8.2 rebuild with the fixed Java 21 runtime.
+
+### Fixed
+
+- The DirectConnect risk policy is bound again after a placement or epoch change.
+- A DirectConnect fence restart no longer blocks a host agent update.
+- The Trading API contract page loads again (invalid YAML fixed).
+
+### Security
+
+- OpenSSL findings in the web and PostgreSQL images: assessed not reachable and accepted by the product owner.
+- Java 21 findings in the Identity image: fixed by the rebuilt Keycloak 26.8.2 image.
+- OpenTelemetry GO-2026-6974 and GO-2026-6975: fixed by OpenTelemetry 1.47.0.
+
 ## [1.3.0-rc.1] - 2026-11-17
 
 First release candidate of 1.3.0. Collects every change since 1.2.2-beta.

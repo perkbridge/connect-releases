@@ -10,7 +10,7 @@ changelog and the security policy. Download a release from
 
 | | |
 |---|---|
-| Latest | **1.3.0-rc.1** (release candidate) |
+| Latest | **1.4.0-rc.2** (release candidate) |
 | Servers | Ubuntu 24.04 LTS, amd64 |
 | Desktop installer | macOS, Windows, Ubuntu |
 | Release key | `perkbridge-release-1` |
