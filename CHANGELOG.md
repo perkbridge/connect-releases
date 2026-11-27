@@ -27,12 +27,20 @@ First published release candidate of 1.4.0 (1.4.0-rc.1 was an internal build and
 - DirectConnect: the proxy-restart fence clears on ledger and broker evidence and is bounded by the proxy's last sign of life; a person can accept the account's own unexplained deals.
 - Runtime images: MetaTrader 5 `main-35317cd7` (NileTrade 1.9.0) and Python `3.12-main-35317cd7` (`perkbridge-connect` 1.9.0b1), hardened.
 - Database migrations 0132 to 0162, expand only.
+- Passed the release quality gate (190 checks passed, none failed). SonarQube not run for this release candidate.
+- PerkBridge Identity image: Keycloak 26.8.2 rebuild with the fixed Java 21 runtime.
 
 ### Fixed
 
 - The DirectConnect risk policy is bound again after a placement or epoch change.
 - A DirectConnect fence restart no longer blocks a host agent update.
 - The Trading API contract page loads again (invalid YAML fixed).
+
+### Security
+
+- OpenSSL findings in the web and PostgreSQL images: assessed not reachable and accepted by the product owner.
+- Java 21 findings in the Identity image: fixed by the rebuilt Keycloak 26.8.2 image.
+- OpenTelemetry GO-2026-6974 and GO-2026-6975: fixed by OpenTelemetry 1.47.0.
 
 ## [1.3.0-rc.1] - 2026-11-17
 
